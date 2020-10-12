@@ -1,0 +1,37 @@
+<div class="login-page">
+  <div class="logo">
+    <div class="form-heading"><span>Sign In</span></div>
+    <img class="logo-image" src='../assets/kidsloop.12972e57.png' alt="kids loop logo" />
+    
+  </div>
+  <div class="form">
+    <form class="login-form" [formGroup]="form" (ngSubmit)="submitForm()" >
+      <div class="input-fields">
+        <div class="username">
+          <input name="username" [formControlName]="'username'" type="text" placeholder="Enter your Username" id="username"
+           required=true />
+          <div class= "error" *ngIf="form.get('username').dirty && form.get('username').errors?.required">
+      **Username is a required field**
+  </div>
+      </div>
+
+      <div class="password">
+        <input name="password" [formControlName]="'password'" type="password" placeholder="Enter your Password" id="password" 
+        required=true/>
+        <div class= "error" *ngIf="form.get('password').dirty && form.get('password').errors?.required">
+      **Password is a required field**
+  </div>
+      </div>
+  </div>
+
+  <div class="cta-elements">
+
+    <a href="#" class="new-account"><span>Create an account</span></a>
+    <button  [disabled]="!form.valid" type="submit" class="custom-button">LOGIN</button>
+  </div>
+
+  </form>
+</div>
+
+
+</div>
